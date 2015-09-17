@@ -11,7 +11,7 @@ Currently available in 3 Languages c,cpp , java You post code, lang and input pa
 
 ###POST Request
 
-```
+```javascript
 //request body
 var data = new FormData()
 data.append('code',code)
@@ -20,7 +20,7 @@ data.append('lang',langCode) // c or cpp or java
 ```
 
 ### Request response (JSON)
-```
+```javascript
 {
  'status' : ,
  'output' : 
@@ -29,7 +29,7 @@ data.append('lang',langCode) // c or cpp or java
 
 ####Sample response if code ran succesfully: 
 
-```
+```javascript
 {
  "status" : "OK",
  "output" : "\nHello, World"
@@ -37,7 +37,7 @@ data.append('lang',langCode) // c or cpp or java
 ```
 ####Sample response if code run failed: 
 
-```
+```javascript
 {
  "status" : "Compilation Err",
  "output" : [
@@ -50,7 +50,7 @@ data.append('lang',langCode) // c or cpp or java
 ```
 
 ##Parsing output: 
-```
+```javascript
 xhr.onload = function() {
     jsn = JSON.parse(xhr.response)    
     if(jsn['status']=="OK"){
